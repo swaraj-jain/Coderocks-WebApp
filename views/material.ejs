@@ -1,0 +1,53 @@
+<%- include('partials/header ma') -%>    
+
+<div class="container-fluid" style="height: calc(100% - 260px);min-height:689px;margin-top:60px;background: linear-gradient(90deg, rgba(0,50,60,1) 5%, rgba(9,114,121,1) 50%, rgba(0,50,60,1) 95%);">
+    <div class="row" style="margin-top:10px">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="thumbnail" style="height: 62px; padding: auto;">
+               <p style="text-align:center ; font-family: 'Alegreya SC', sans-serif; font-size: 35px; background: rgb(0, 102,102); color: white;padding-top:1px"><strong>Important topic you Must know before Getting start</strong></p>
+            </div>
+            <div class="thumbnail">
+                <div class="list-group" style="font-family: 'Source Code Pro', monospace;">
+                    <a href="/materials/1" class="list-group-item list-group-item-action list-group-item-info " id="materiallist" style="font-family: 'Chilanka', sans-serif;background-color:rgb(51, 0, 38);color:white;font-size:20px">Which languages to get started</a>
+                    <a href="/materials/2" class="list-group-item list-group-item-action list-group-item-secondary" id="materiallist" style="font-family: 'Chilanka', sans-serif;color:black;font-size:20px">Binary Search</a>
+                    <a href="/materials/3" class="list-group-item list-group-item-action list-group-item-info" id="materiallist" style="font-family: 'Chilanka', sans-serif;background-color:rgb(51, 0, 38);color:white;font-size:20px">Sieve Therom</a>
+                    <a href="/materials/4" class="list-group-item list-group-item-action list-group-item-secondary" id="materiallist" style="font-family: 'Chilanka', sans-serif;color:black;font-size:20px">Bubble Sort</a>
+                    <a href="https://www.geeksforgeeks.org/quick-sort/" class="list-group-item list-group-item-action list-group-item-info" id="materiallist" style="font-family: 'Chilanka', sans-serif;background-color:rgb(51, 0, 38);color:white;font-size:20px">Quick Sort</a>
+                    <a href="https://www.geeksforgeeks.org/recursion/" class="list-group-item list-group-item-action list-group-item-secondary" id="materiallist" style="font-family: 'Chilanka', sans-serif;color:black;font-size:20px">Recursion</a>
+                    <a href="https://www.geeksforgeeks.org/dynamic-programming/" class="list-group-item list-group-item-action list-group-item-info" id="materiallist" style="font-family: 'Chilanka', sans-serif;background-color:rgb(51, 0, 38);color:white;font-size:20px">Dynamic Programing</a>
+                    <% allmaterial.forEach(function(material){ %>
+                        <%count++;%>
+                        <% if(count%2){ %>
+                            <a href="<%= material.linkToTopic %>" class="list-group-item list-group-item-action list-group-item-info" id="materiallist" style="font-family: 'Chilanka', sans-serif;background-color:white;color:rgb(51, 0, 38);font-size:20px"><%= material.Topic %></a>
+                        <% } else{ %>
+                            <a href="<%= material.linkToTopic %>" class="list-group-item list-group-item-action list-group-item-info" id="materiallist" style="font-family: 'Chilanka', sans-serif;background-color:rgb(51, 0, 38);color:white;font-size:20px"><%= material.Topic %></a>
+                        <% }%>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <p style="text-align: center; color:  white; font-size: 30px;"><strong>Didn't find the topic you are looking for?<br> Feel free to tell us your suggestions!</strong></p>
+        <p style="text-align: center;">
+            <a href="material/addsuggestions" class="btn btn-primary btn-lg ">Suggest Us!</a>
+        </p>
+        <p style="text-align: center;">
+            <a href="material/addMaterial" class="btn btn-primary btn-lg ">Add Material</a>
+        </p>    
+    </div>
+    <br>
+</div>
+
+
+
+<!--<button class="btn"><a href="material/addMaterial">Add Material</a></button>
+<button class="btn"><a href="material/addsuggestions">Add Your Suggestion for Material</a></button>-->
+
+   
+<%- include('partials/footer') -%>
